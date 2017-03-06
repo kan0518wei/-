@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--
+      div a {}
+      div > a {}
+      div+div {}
+      div~div {}
+      这些都统称为结构选择器
+    -->
+<!--
+ div+div {} 选择目标元素（前面的div）的  下一个元素 （后面的div）会被选中
+ div~div {} 选择目标元素（前面的div）的 之后  同级的所有元素
+-->
+    <style>
+        /*div+div{
+            color: red;
+        }*/
+        .div~div{
+            color: red;
+        }
+    </style>
+    <div>1</div>
+    <div class="div">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!--申明了一个标准的html5文档类型-->
+<!DOCTYPE html>
+<!--申明这个文档是一个中文简体语言的文本 在一些非这类语言的机器上 浏览器可识别 -->
+<html lang="zh-CN">
+<head>
+    <!--申明页面的字符编码是 utf-8 -->
+    <meta charset="utf-8">
+    <!-- 申明IE浏览器需要用最新的渲染引擎来渲染当前的页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        视口 只有移动端才识别 申明了申明？
+        width 申明视口的宽度等于设备的宽度
+        initial-scale 申明的是 默认的初始缩放比 1：1 也就是等比显示在移动端
+        user-scalable 不允许用户自行缩放
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!-- 核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--在不支持  html5标签的浏览器和不支持media查询的浏览器我们使用的是下面连个js插件来做兼容 -->
+    <!-- 有条件注释  在ie9以下的版本浏览器 使用下面两个js文件 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--  注意  要在http形式下打开 页面 才能正常使用下面两个文件-->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+
+    <!--自己的css文件-->
+
+</head>
+<body>
+<!--
+     轮播图容器 class="carousel" data-ride="carousel"
+     把这个容器认作是一个轮播图组件 初始化这个轮播图
+-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!--小圆点 容器-->
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <!--
+            每一个小圆点  都要对应上一个轮播内容容器
+            data-target  指明需要控制的那个容器  控制ID是carousel-example-generic
+            data-slide-to 指明  我们控制的是哪一个具体轮播内容容器
+        -->
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!--轮播内容的大容器-->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <!--轮播的内容 item-->
+        <div class="item active">
+            <img src="..." alt="...">
+            <!--说明容器-->
+            <div class="carousel-caption">
+                ...
+            </div>
+        </div>
+        <div class="item">
+            <img src="..." alt="...">
+            <div class="carousel-caption">
+                ...
+            </div>
+        </div>
+        <div class="item">
+            <img src="..." alt="...">
+            <div class="carousel-caption">
+                ...
+            </div>
+        </div>
+    </div>
+
+    <!--左右两侧的箭头-->
+    <!--
+        控制上一张还是下一张的按钮  这是A按钮
+        我们需要知道控制谁？ data-target
+        A 通过  href  还控制  内容是  轮播图容器的ID 指定当前的A控制谁
+        data-slide  指明我们这个按钮的功能 prev next 来说明这个是一个说明功能的按钮
+    -->
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!--因为  bootstrap  是依赖 jquery  引用jquery文件-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- js 核心文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

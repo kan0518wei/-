@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>媒体查询</title>
+    <style>
+        body,html{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            background: red;
+            height: 1000px;
+        }
+        /*0-768 需要在移动端的时候  显示绿色并且是100%显示*/
+        /*需要查询当前屏幕下的尺寸 and 之后需要加空格*/
+        @media screen and (max-width:768px){
+            /*定义我们这个区间内的样式*/
+            .container{
+                width: 100%;
+                background: green;
+            }
+        }
+        /*768-992 需要在小屏幕设备下  显示黄色并且宽度750px*/
+        @media screen and (min-width:768px) and (max-width: 992px){
+            /*定义我们这个区间内的样式*/
+            .container{
+                width: 750px;
+                background: yellow;
+            }
+        }
+        /*992-1200 需要在中等屏幕下  显示蓝色并且 宽度是 970px*/
+        @media screen and (min-width:992px) and (max-width: 1200px){
+            /*定义我们这个区间内的样式*/
+            .container{
+                width: 970px;
+                background: blue;
+            }
+        }
+        /*1200 需要在大屏幕下 显示粉红色 宽度1170px*/
+        @media screen and (min-width:1200px){
+            /*定义我们这个区间内的样式*/
+            .container{
+                width: 1170px;
+                background: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>

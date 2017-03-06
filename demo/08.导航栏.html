@@ -1,0 +1,91 @@
+<!--申明了一个标准的html5文档类型-->
+<!DOCTYPE html>
+<!--申明这个文档是一个中文简体语言的文本 在一些非这类语言的机器上 浏览器可识别 -->
+<html lang="zh-CN">
+<head>
+    <!--申明页面的字符编码是 utf-8 -->
+    <meta charset="utf-8">
+    <!-- 申明IE浏览器需要用最新的渲染引擎来渲染当前的页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        视口 只有移动端才识别 申明了申明？
+        width 申明视口的宽度等于设备的宽度
+        initial-scale 申明的是 默认的初始缩放比 1：1 也就是等比显示在移动端
+        user-scalable 不允许用户自行缩放
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!-- 核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--在不支持  html5标签的浏览器和不支持media查询的浏览器我们使用的是下面连个js插件来做兼容 -->
+    <!-- 有条件注释  在ie9以下的版本浏览器 使用下面两个js文件 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--  注意  要在http形式下打开 页面 才能正常使用下面两个文件-->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+
+    <!--自己的css文件-->
+
+</head>
+<body>
+<!--导航条  默认样式的导航条-->
+<nav class="navbar navbar-default">
+    <!--响应式布局容器-->
+    <div class="container">
+        <!--这个模块  在移动端显示-->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--汉堡菜单-->
+            <!--
+                包含了 collapse js 组件
+                data-toggle 属性内容就是  组件的名称
+                当你申明了这个属性的时候
+                就告诉bootstrap这是一个手风琴菜单组件
+                初始化这个组件
+                控制一个盒子  让它显示或隐藏
+                怎么样控制
+                data-target 内容就是我们指定要控制的那个盒子
+                （当这个按钮是A的时候那么它还可以以通过 href来控制 指明ID就可以）
+                定义我们需要控制哪个盒子
+                可以通过 class  也可以通过ID
+            -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <!--也是屏幕阅读器使用的  screen read only-->
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--显示logo-->
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- 导航条内容容器 -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--因为  bootstrap  是依赖 jquery  引用jquery文件-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- js 核心文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

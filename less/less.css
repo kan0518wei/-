@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*注释的区别 会编译在css文件当中*/
+/*怎么申明一个变量*/
+body {
+  /*主题色*/
+  color: #e92322;
+}
+a {
+  color: #e92322;
+}
+/*什么是Mixin 混入*/
+.redFont {
+  color: red;
+}
+.redBorder {
+  border: 1px solid red;
+}
+/*红色文字和边框  通过class混合*/
+.redFontBorder-class {
+  color: red;
+  border: 1px solid red;
+}
+/*方法 不能喝css的类名重复 否则会都引用*/
+/*红色文字和边框  通过func混合*/
+.redFontBorder-func {
+  color: green;
+  border: 1px solid red;
+}
+/*嵌套*/
+.wjs_header {
+  border-bottom: 1px solid #ccc;
+  color: #666;
+  font-size: 12px;
+  position: relative;
+  z-index: 1001;
+}
+.wjs_header .wjs_app {
+  color: #666;
+  position: relative;
+  display: block;
+}
+.wjs_header .wjs_app img {
+  display: none;
+}
+.wjs_header .wjs_app:hover img {
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -60px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.wjs_header a {
+  color: #666;
+}
+.wjs_header > .container > .row div {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.wjs_header > .container > .row div + div {
+  border-left: 1px solid #ccc;
+}
+.wjs_header .btn-register {
+  background: #E92322;
+  color: #fff;
+  padding: 3px 15px;
+}
+/*导入 import*/
+/*内置函数*/
+.colorI {
+  color: #1a1a1a;
+}

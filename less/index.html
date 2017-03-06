@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- type text/less-->
+    <link rel="stylesheet" type="text/less" href="less.less"/>
+</head>
+<br>
+        less 怎么在浏览器上应用<br>
+
+
+    <!--
+    在浏览器是使用less的话我们需要添加一个js插件
+    less.js 解析less文件动态加载head当中
+    这样了引用less文件
+    注意：它是异步的加载less文件然后解析
+          一定要求是  使用http形式访问否则无法加载less文件
+    不建议使用lessjs这种形式来用less
+    -->
+    <script src="less.min.js"></script>
+</body>
+</html>

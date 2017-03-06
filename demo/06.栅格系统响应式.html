@@ -1,0 +1,84 @@
+<!--申明了一个标准的html5文档类型-->
+<!DOCTYPE html>
+<!--申明这个文档是一个中文简体语言的文本 在一些非这类语言的机器上 浏览器可识别 -->
+<html lang="zh-CN">
+<head>
+    <!--申明页面的字符编码是 utf-8 -->
+    <meta charset="utf-8">
+    <!-- 申明IE浏览器需要用最新的渲染引擎来渲染当前的页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--
+        视口 只有移动端才识别 申明了申明？
+        width 申明视口的宽度等于设备的宽度
+        initial-scale 申明的是 默认的初始缩放比 1：1 也就是等比显示在移动端
+        user-scalable 不允许用户自行缩放
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!-- 核心css文件 -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!--在不支持  html5标签的浏览器和不支持media查询的浏览器我们使用的是下面连个js插件来做兼容 -->
+    <!-- 有条件注释  在ie9以下的版本浏览器 使用下面两个js文件 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--  注意  要在http形式下打开 页面 才能正常使用下面两个文件-->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.js"></script>
+    <![endif]-->
+
+    <!--自己的css文件-->
+    <style>
+        .container{
+            background: yellowgreen;
+            height: 1000px;
+        }
+        .row{
+            height: 50px;
+        }
+        .row div{
+            height: 50px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <!--布局容器 没有高度 响应式容器-->
+    <div class="container">
+        <!--行 row 清除父容器的内边距 并不是真正去除的 而是通过自身的拉伸 来填充-->
+        <div class="row">
+            <!--  我需要在
+            大屏  显示 4等分  3
+            中等屏幕 显示  3等分  4
+            小屏幕  显示  2等分  6
+            超小  显示 1  12
+            -->
+            <!--col-xs-* 针对超小屏幕和以上生效  1-12-->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <!--每一个栅格系统也是由间距  row去除-->
+                <!--嵌套-->
+                <div class="row">
+                    <div class="col-xs-6"></div>
+                    <div class="col-xs-2 col-xs-offset-4"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+        </div>
+    </div>
+
+
+
+<!--因为  bootstrap  是依赖 jquery  引用jquery文件-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.js"></script>
+<!-- js 核心文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

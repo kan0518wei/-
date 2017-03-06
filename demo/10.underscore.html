@@ -1,0 +1,77 @@
+<!--html5的标准文档结构-->
+<!DOCTYPE html>
+<!--指定文本的语言 中文-简体-->
+<html lang="zh-CN">
+<head>
+    <!--指定当前网页的编码格式-->
+    <meta charset="utf-8">
+    <!--指定当前的IE浏览器用它最新的渲染引擎 来渲染我们的网页-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--只会在移动端识别  视口  当前的宽度等于设备的宽度，默认的缩放比1.0，不予许用户自行缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>title</title>
+
+    <!-- Bootstrap -->
+    <!--引入核心css文件-->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--
+    html5shiv 是IE9一下的浏览器支持html5标签
+    respond 在IE9一下不支持media query的时候让它能支持 我们的媒体查询
+    注意：：：：：以http形式打开预览
+    cdn 资源加速引擎  由于是在本地开发是不是应用本地的文件
+
+    -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <!--自己的css样式-->
+    <!-- TODO -->
+</head>
+<body>
+<div id="box"></div>
+
+<!-- TODO -->
+<!--使用了undersocre的each方法
+第一个参数  就当前遍历的对象
+第二个从那时当前遍历的索引
+-->
+<script type="text/template" id="template">
+    <div>
+        <%_.each(model,function(item,i){%>
+            <p><%-item.name%></p>
+        <%});%>
+    </div>
+</script>
+<!--说明bootstrap是基于jquery开发的-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) 引用的是jquery-->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!--bootstrap的核心js文件-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<!--自己的js文件  我们基于上面两个框架-->
+<script src="../lib/underscore/underscore-min.js"></script>
+<script>
+    $(function(){
+        /*
+        * - 是直接渲染成字符
+        * = 直接填充在html  标签是会被渲染
+        * XSS攻击：跨站脚本攻击(Cross Site Scripting)，
+        * 为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆
+        * 故将跨站脚本攻击缩写为XSS。
+        * */
+        /* 准备 json  数据*/
+        var data = [{name:'<script>alert(0);<\/script>'},{name:'xiaohong'}];
+        /* 参数是模板当中的字符串  使用template方法 返回一个模板对象*/
+        var template = _.template($('#template').html());
+        /*调用模板对象的时候  传入json数据  返回的就是解析过后的字符串*/
+        $('#box').html( template({model:data}));
+    });
+</script>
+</body>
+</html>
